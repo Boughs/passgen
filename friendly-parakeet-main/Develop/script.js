@@ -15,6 +15,16 @@ function generatePassword() {
 
   var length = prompt("Choose a password length from 8-128 characters!");
   length = parseInt(length);
+
+  if (length < 8) {
+    alert("Passwords must be at or above 8 characters!");
+    return "";
+  }
+
+  if (length > 128) {
+    alert("Passwords must not have more than 128 characters!");
+    return "";
+  }
   // 1. Promt user for the password criteria
   // a. password length between 8 and 128 characters
   // b. lowercase, uppercase, numbers, special characters
