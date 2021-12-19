@@ -6,20 +6,15 @@ var generateBtn = document.querySelector("#generate");
 
 //Generate Password fucntion
 function generatePassword() {
-  var length = Number(promt("How many characters would you like your password to include?"));
-  while (isNaN(length) || length < 8 || length > 128) length = Number(prompt("Length must be 8-128 characters. How many characters would you like?"));
-  var uppercase = confirm("Would you like to use any uppercase letters?");
-  var lowercase = confirm("Would you like to use any lowercase letters?");
-  var numbers = confirm("Would you like to use any numbers?");
-  var symbols = confirm("Would you like to use any special characters?");
+  var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var lowercase = "abcdefghijklmnopqrstuvwxyz";
+  var numbers = "1234567890";
+  var special = "`~!@#$%^&*()_-+={}[];:'<>,.?/";
+  var password = "";
+  var passwordChar = "";
 
-  while (!uppercase && !lowercase && !numbers && symbols) {
-    alert("You must select at least one character type!");
-    uppercase = confirm("Would you like to use any uppercase letters?");
-    lowercase = confirm("Would you like to use any lower case letters?");
-    numbers = confirm("Would you like to use any numbers?");
-    symbols = confirm("Would you liek to use any special characters?");
-  }
+  var length = prompt("Choose a password length from 8-128 characters!");
+  length = parseInt(length);
   // 1. Promt user for the password criteria
   // a. password length between 8 and 128 characters
   // b. lowercase, uppercase, numbers, special characters
@@ -27,7 +22,6 @@ function generatePassword() {
   // 3. Generate password based on criteria
 
   // 4. Display the generated password on the page
-  return "Generated Password will go here";
 }
 
 // Write password to the #password input
