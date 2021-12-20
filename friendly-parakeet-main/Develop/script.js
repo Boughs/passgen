@@ -51,7 +51,12 @@ function generatePassword(){
   ) {
     return alert("One attribute must be chosen for password generation!!!");
   }
-  
+
+  // Will take users selected character attributes and randomly distribute into password variable
+  for (var i = 0; i < longPass; i++) {
+    password +=passwordInProgress[Math.floor(Math.random () * passwordInProgress.length)];
+  }
+  return password;
 }
 // Write password to the #password input
 function writePassword() {
